@@ -2,7 +2,10 @@
 import dotenv from 'dotenv';
 
 type ServerConfig = {
-    PORT: number
+    PORT: number,
+    DB_URI: string,
+    REDIS_URL: string,
+    REDIS_COUNTER_KEY: string
 }
 
 function loadEnv() {
@@ -13,5 +16,8 @@ function loadEnv() {
 loadEnv();
 
 export const serverConfig: ServerConfig = {
-    PORT: Number(process.env.PORT) || 3001
+    PORT: Number(process.env.PORT) || 3001,
+    DB_URI: process.env.DB_URI || '',
+    REDIS_URL: process.env.REDIS_URL || '',
+    REDIS_COUNTER_KEY: process.env.REDIS_COUNTER_KEY || ''
 };
