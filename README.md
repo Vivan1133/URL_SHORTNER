@@ -3,7 +3,7 @@
 1. Clone the project
 
 ```
-git clone https://github.com/Vivan1133/Express-typescript-template.git <ProjectName>
+git clone https://github.com/Vivan1133/URL_SHORTNER.git <ProjectName>
 ```
 
 2. Move in to the folder structure
