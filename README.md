@@ -1,7 +1,7 @@
-##URL Shortener Service
+## URL Shortener Service
 A backend service for generating and resolving short URLs, designed with scalability, performance, and clean architecture in mind.
 
-##Overview
+## Overview
 
 1. Designed and implemented a URL shortening backend service
 2. Built RESTful APIs to create, resolve, and manage short URLs
