@@ -36,8 +36,8 @@ export class UrlRepository {
 
         return urls.map(url => ({
             id: url._id?.toString() || '',
-            originalUrl: url.longURL,
-            shortUrl: url.shortURL,
+            originalUrl: url.originalUrl,
+            shortUrl: url.shortUrl,
             clicks: url.clicks,
             createdAt: url.createdAt,
             updatedAt: url.updatedAt
@@ -66,8 +66,8 @@ export class UrlRepository {
 
         return {
             id: url._id?.toString() || '',
-            originalUrl: url.longURL,
-            shortUrl: url.shortURL,
+            originalUrl: url.originalUrl,
+            shortUrl: url.shortUrl,
             clicks: url.clicks,
             createdAt: url.createdAt,
             updatedAt: url.updatedAt

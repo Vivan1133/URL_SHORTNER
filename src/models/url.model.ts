@@ -1,16 +1,16 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
 export interface IURL extends Document {
-    longURL: string,
-    shortURL: string,
+    originalUrl: string,
+    shortUrl: string,
     clicks: number,
     createdAt: Date,
     updatedAt: Date
 }
 
 const urlSchema = new Schema<IURL>({
-    longURL: { type : String, required: true },
-    shortURL: { type: String, required: true, unique: true, index: true},
+    originalUrl: { type : String, required: true },
+    shortUrl: { type: String, required: true, unique: true, index: true},
     clicks: { type: Number, default: 0},
 }, { timestamps: true });
 
