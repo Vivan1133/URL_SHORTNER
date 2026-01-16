@@ -26,3 +26,13 @@ export const getOriginalUrl = async (req : Request, res : Response) => {
     res.redirect(url.originalUrl)
 }
 
+export const getUrlStats = async (req : Request, res : Response) => {
+    const shortCode : string = req.params.shortCode
+    const urlStats = await urlService.getUrlStatsService(shortCode)
+    res.status(StatusCodes.OK).json(urlStats)
+}
+
+export const findAllHandler = async (req : Request, res : Response) => {
+    const urls = await urlService.findAllService()
+    res.status(StatusCodes.OK).json(urls)
+}

@@ -1,6 +1,6 @@
 import { serverConfig } from "../config";
 import { CacheRepository } from "../repositories/cache.repository";
-import { UrlRepository } from "../repositories/url.repository";
+import { UrlRepository, UrlStats } from "../repositories/url.repository";
 import { toBase62 } from "../utils/base62";
 import { NotFoundError } from "../utils/errors/app.error";
 
@@ -67,5 +67,13 @@ export class UrlService {
     async incrementClicks(shortUrl: string) {
         await this.urlRepository.incrementClicks(shortUrl);
         return;
+    }
+
+    async getUrlStatsService(shorttUrl : string) : Promise<UrlStats | null> {
+        return await this.urlRepository.findStatsByShortUrl(shorttUrl)
+    }
+
+    async findAllService() : Promise<UrlStats[]> {
+        return await this.urlRepository.findAll()
     }
 }
